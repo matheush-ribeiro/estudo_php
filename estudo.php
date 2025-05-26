@@ -1,4 +1,5 @@
 <?php
+//PHP BÁSICO
 
 //echo imprime na tela
 echo "olá mundo";
@@ -119,8 +120,8 @@ else {
 echo '<br>';
 
 //operadores matemáticos e lógicos
-$numero_01 = 21;
-$numero_02 = 20;
+$numero_01 = 20;
+$numero_02 = 21;
 
 if ($numero_01 < $numero_02) {
     echo 'Número 1 é menor que número 2';
@@ -131,13 +132,89 @@ else if ($numero_01 <= $numero_02) {
 else if ($numero_01 == $numero_02) {
     echo 'Número 1 é igual ao número 2';
 }
-/*else if ($numero_01 >= $numero_02) {
-    echo 'Número 1 é maior ou igual ao número 2';
-}*/
-else if ($numero_01 > $numero_02) {
+else if ($numero_01 >= $numero_02) {
     echo 'Número 1 é maior que número 2';
 }
 else {
     echo 'Nenhuma das condições batem';
 }
+echo '<br>';
+$var_01 = 'valor1';
+$var_02 = 'valor2';
+$var_03 = 'valor1';
+#operador lógico &&, todos os valores tem que ser iguais para dar verdade, se não ele vai para o else.
+if (($var_01 == $var_02) && $var_02 == $var_03) {
+    echo 'Os valores são iguais';
+}
+else {
+    echo 'Falso';
+}
+echo '<br>';
+#operador lógico `ou, ||`no caso anterior se apenas 2 variáveis forem iguais dependendo da condição, ele já irá dar verdade.
+if ($var_01 == $var_02 || $var_01 == $var_03) {
+    echo 'Verdade';
+}
+else {
+    echo 'Falso';
+}
+echo '<br>';
+echo '<hr>';
+//loopings
+#laço de repetição for
+for ($contador=0; $contador<3;$contador++) {
+    echo 'Olá mundo';
+    echo '<br>';
+}
+echo '<br>';
+#laço de repetição while
+$contador_while = 0;
+while ($contador_while < 3) {
+    $contador_while++;
+    echo 'The end has no end';
+    echo '<br>';
+}
+echo '<br>';
+echo '<hr>';
+
+//PHP INTERMEDIÁRIO
+
+//foreach e for para arrays
+$arr = array('Matheus','Larissa','Guiomar','Orlando');
+
+foreach ($arr as $key =>$value) {
+    echo $key;
+    echo '<br>';
+    echo $value;
+    echo '<br>';
+}
+
+$total = count($arr);
+
+for ($i = 0; $i < $total; $i++) {
+    echo $arr[$i];
+    echo '<br>';
+}
+echo '<br>';
+
+//array multidimensional
+$arr2 = array(array('Mark','John','Marie'),array(40,50,60));
+echo $arr2[0][2];
+echo '<br>';
+
+//die e sleep
+sleep(0);
+echo 'um';
+echo '<br>';
+
+$number1 = 1;
+$number2 = 1;
+
+if ($number1 == $number2) {
+    echo 'O die não será executado';
+}
+else {
+    die('morte');
+}
+echo '<br>';
+echo 'Olá mundo !!!';
 ?>
