@@ -217,4 +217,108 @@ else {
 }
 echo '<br>';
 echo 'Olá mundo !!!';
+echo '<br>';
+
+//entendendo funções nativas e criando funções
+/*function mostrarNome() {
+    echo 'O nome é: Matheus Ribeiro';
+}
+mostrarNome();
+echo '<br>';*/
+
+function mostrarNome($nome, $idade) {
+    echo 'O nome é: Matheus Ribeiro';
+    echo '<br>';
+    echo 'Idade: '.$idade;
+}
+mostrarNome('Matheus', 27);
+echo '<br>';
+
+//utilizando include e date
+#trabalhando com datas
+date_default_timezone_set('America/Sao_Paulo');
+$data = date('d/m/Y H:i:s');
+echo $data;
+echo '<br>';
+
+/*
+Para adicionarmos segundos na hora que setamos da pra usar
+a função time adicionando o tempo que queremos acrescentar em
+segundos. 
+*/
+date_default_timezone_set('America/Sao_Paulo');
+$data2 = date('d/m/Y H:i:s',time()+(60*10)); //60*10 = a 10 minutos.
+echo $data2;
+echo '<br>';
+
+#include
+include('header.php');
+?>
+<html>
+    <body>
+        <h1>Olá mundo.</h1>
+    </body>
+</html>
+<?php
+include('footer.php');
+
+//funções para string
+
+$conteudo = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac justo facilisis, sagittis sem sit amet, imperdiet dolor. In sed dictum libero. Cras massa diam, interdum a tincidunt nec, rutrum iaculis eros. Duis non massa nisi. Ut a dui sed libero pretium ornare et rhoncus libero. Mauris eleifend faucibus nunc. Morbi lobortis gravida tortor, vitae laoreet mauris posuere vitae. Nullam vehicula convallis massa, sit amet faucibus orci iaculis sed. Nullam ut ligula ac nibh rutrum eleifend vitae eget urna. Aenean congue mollis sapien, nec mollis ipsum consectetur nec. Vestibulum in nisl aliquam, pulvinar sem at, mollis eros. Aliquam vitae urna nec odio hendrerit interdum. Cras gravida tristique porttitor. Pellentesque venenatis sapien eu augue consequat fringilla.';
+
+#serve para recortar uma string
+echo substr($conteudo,0,20);
+echo '<br>';
+
+$name = 'Matheus Henrique Ribeiro';
+$names = explode(' ',$name);
+print_r($names);
+echo '<br>';
+
+$names = implode(' ',$names);
+echo $names;
+echo '<br>';
+
+$conteudo2 = '<h1>Hello World</h1> Outra coisa';
+echo strip_tags($conteudo2);
+echo '<br>';
+
+echo htmlentities('<div>Oi</div>');
+echo '<br>';
+
+//switch, continue e break
+
+$name_1 = 'Matheus';
+
+switch($name_1) {
+    case 'Matheus':
+        echo 'Minha variável é Matheus';
+        break;
+    case 'João':
+        echo 'Minha variável é João';
+        break;
+}
+echo '<br>';
+
+for ($cont = 0; $cont < 10; $cont++){
+    if($cont == 5)
+    continue;
+    echo $cont;
+    /*if($cont == 5)
+    break;*/
+}
+echo '<br>';
+
+//funções para manipular arrays
+#array_merge serve para unir 1 ou mais arrays
+$array1 = array("cor" => "vermelho", 2, 4);
+$array2 = array("a", "b", "cor" => "verde", "forma" => "trapezoide", 4);
+$result = array_merge($array1, $array2);
+print_r($result);
+echo '<br>';
+
+#array_intersect_key serve para verificar se há outro array com a mesma chave
+$array10 = array("chave1"=>"valor1","chave2"=>"valor2");
+$array11 = array("chave1"=>"outro valor", "chave3"=>"valor3", "chave4"=>"valor4");
+print_r(array_intersect_key($array10, $array11));
 ?>
